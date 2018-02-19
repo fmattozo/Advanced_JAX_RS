@@ -1,13 +1,16 @@
-package org.matozzo.training.rest;
+package org.matozzo.training.rest.paramConverters;
 
 
 // Simple POJO para ser usado para conversao de tipos
+// including just the toString override
 public class MyDate {
 
 	
 	private int day;
 	private int month;
 	private int year;
+	
+	
 	public int getDay() {
 		return day;
 	}
@@ -25,6 +28,10 @@ public class MyDate {
 	}
 	public void setYear(int year) {
 		this.year = year;
+	}
+	
+	public String toString() {
+		return "Mydate [date= " + day + ", month= " + month + ", year= " + year + "]";
 	}
 	
 	
