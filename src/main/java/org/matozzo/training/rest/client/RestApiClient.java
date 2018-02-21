@@ -2,6 +2,7 @@ package org.matozzo.training.rest.client;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.Invocation.Builder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
@@ -67,6 +68,25 @@ public class RestApiClient {
 		
 		System.out.println(message1.getMessage());
 		System.out.println(message2.getMessage());
+		
+		// CRIANDO POST
+		// cria a message que vai ser enviada
+		String postMessageLink = "http://localhost:8080/messenger/training/messages";
+		Message message3 = new Message(4, "Message by client mode", "Matozzo by client app");
+		Entity<Message> postMessage = Entity.json(message3);	// tranforma a msg em um tipo q pode ser enviado
+		Response postResponse = client.target(postMessageLink)
+								.request()
+								.post(postMessage);	// envia o post da msg
+		// usando o response para validar
+		// vc tem tudo dentro deste objeto
+		if(postResponse.getStatus() != 200 ) {
+			System.out.println("Error");
+		}
+		Message responseMessage = postResponse.readEntity(Message.class);		// pega o retorno e estrai a msg
+		
+		System.out.println(postResponse);
+		System.out.println(responseMessage.getMessage());
+		
 
 	}
 
