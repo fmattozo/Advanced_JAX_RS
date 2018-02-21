@@ -14,6 +14,7 @@ import org.matozzo.training.rest.client.model.Message;
 // the package org.matozzo.training.rest.client.model is a copy of models of message project
 // message project is the first project implemented
 // so you run the message project to use this app
+@SuppressWarnings("unused")
 public class RestApiClient {
 
 	public static void main(String[] args) {
