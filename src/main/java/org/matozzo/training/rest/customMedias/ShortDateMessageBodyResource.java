@@ -16,7 +16,8 @@ public class ShortDateMessageBodyResource {
 
 	@GET
 	//@Produces(value = { MediaType.TEXT_PLAIN, "text/shortdate" })
-	@Produces(MediaType.TEXT_PLAIN)
+	@Produces("text/shortdate")
+	//@Produces(MediaType.TEXT_PLAIN)
 	public Date getDate() {
 		return Calendar.getInstance().getTime();
 	}
