@@ -12,7 +12,8 @@ import javax.ws.rs.ext.Provider;
  * Este é só um exemplo pegando os headers do request e do RESPONSE
  * dessa forma é possivel receber informações do header
  * inserir outras
- * além de mexer em qq coisa na request or whatever what you want
+ * Para mexer em qq coisa na request or whatever what you want you need use
+ * Interceptor... this can work with body
  */
 
 @Provider
