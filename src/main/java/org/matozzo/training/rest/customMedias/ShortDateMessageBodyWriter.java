@@ -14,7 +14,8 @@ import javax.ws.rs.ext.MessageBodyWriter;
 import javax.ws.rs.ext.Provider;
 
 @Provider
-@Produces("text/shortdate")
+//@Produces("text/shortdate")
+@Produces(MediaType.TEXT_PLAIN)
 // substitui aqui o tipo que vc criou... no fundo mesmo esta retornando uma string formatada
 // isso pode servir para que se use um tipo camuflado dentro de outra coisa
 public class ShortDateMessageBodyWriter<T> implements MessageBodyWriter<Date>{

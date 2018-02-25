@@ -15,7 +15,9 @@ import javax.ws.rs.core.MediaType;
 public class ShortDateMessageBodyResource {
 
 	@GET
-	@Produces(value = { MediaType.TEXT_PLAIN, "text/shortdate" })
+	//@Produces(value = { MediaType.TEXT_PLAIN, "text/shortdate" })
+	@Produces("text/shortdate")
+	//@Produces(MediaType.TEXT_PLAIN)
 	public Date getDate() {
 		return Calendar.getInstance().getTime();
 	}

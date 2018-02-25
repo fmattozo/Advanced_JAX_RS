@@ -18,7 +18,7 @@ import javax.ws.rs.core.MediaType;
 public class MessageBodyResource {
 	
 	@GET
-	@Produces(MediaType.TEXT_PLAIN)
+	//@Produces(MediaType.TEXT_PLAIN)
 	public Date getDate() {
 		return Calendar.getInstance().getTime();
 	}
